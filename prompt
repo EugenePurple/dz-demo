@@ -1,0 +1,2 @@
+PS1='[$(date +"%a %b %d")]max@ws01 '
+[Mon Sep 28]max@ws01
