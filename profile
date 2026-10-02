@@ -28,3 +28,4 @@ fi
 export ENVIRONMENT=Dev
 set -o alias
 alias cur='date'
+ 
