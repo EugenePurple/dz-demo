@@ -26,6 +26,4 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 export ENVIRONMENT=Dev
-set -o alias
 alias cur='date'
- 
