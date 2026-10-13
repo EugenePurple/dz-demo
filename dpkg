@@ -1,0 +1,7 @@
+sudo apt update
+sudo apt install libevent-2.1-6
+sudo apt install libssl1.1
+apt-cache search libevent
+apt-cache search libssl
+sudo apt install libevent-2.1-7
+sudo apt install libssl3

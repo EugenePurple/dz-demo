@@ -1,0 +1,3 @@
+sudo add-apt-repository -r jammy-security/universe
+sudo apt update
+grep -q 'deb ["]jammy-security universe["]' /etc/apt/sources.list
