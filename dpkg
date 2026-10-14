@@ -1,0 +1,52 @@
+Пробуем установить Tor с помощью команды: sudo dpkg -i /home/max/linux-vm/4/tor_0.3.2.10-1_amd64.deb
+Терминал отвечает следующим образом:
+Selecting previously unselected package tor.
+(Reading database ... 205075 files and directories currently installed.)
+Preparing to unpack .../4/tor_0.3.2.10-1_amd64.deb ...
+Unpacking tor (0.3.2.10-1) ...
+dpkg: dependency problems prevent configuration of tor:
+tor depends on libevent-2.1-6 (>= 2.1.8-stable); however:
+Package libevent-2.1-6 is not installed.
+tor depends on libssl1.1 (>= 1.1.0); however:
+Package libssl1.1 is not installed.
+dpkg: error processing package tor (--install):
+dependency problems - leaving unconfigured
+Processing triggers for man-db (2.10.2-1) ...
+Errors were encountered while processing:
+tor
+Это означает, что Tor распаковался, но не установился, так как не хватает зависимостей (depends) с компонентами libevent и libssl.
+Запускаем следующую команду, чтобы менеджер пакетов APT попытался найти и исправить проблему, попробовал установить недостающие зависимости или исправить повреждённые пакеты, или решить конфликты возникшие при предыдущей неудачной установке: sudo apt install -f
+Терминал отвечает так:
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Correcting dependencies... Done
+The following packages will be REMOVED:
+tor
+0 upgraded, 0 newly installed, 1 to remove and 376 not upgraded.
+2 not fully installed or removed.
+After this operation, 4,306 kB disk space will be freed.
+Do you want to continue? [Y/n] y
+(Reading database ... 205105 files and directories currently installed.)
+Removing tor (0.3.2.10-1) ...
+Setting up initramfs-tools (0.140ubuntu13) ...
+update-initramfs: deferring update (trigger activated)
+Processing triggers for man-db (2.10.2-1) ...
+Processing triggers for initramfs-tools (0.140ubuntu13) ...
+update-initramfs: Generating /boot/initrd.img-6.8.0-138-generic
+I: The initramfs will attempt to resume from /dev/sda4
+I: (UUID=fea6d28a-87d8-4e12-90f8-127fb098d3ce)
+I: Set the RESUME variable to override this.
+zstd: error 25 : Write error : No space left on device (cannot write compressed block)
+E: mkinitramfs failure zstd -q -1 -T0 25
+update-initramfs: failed for /boot/initrd.img-6.8.0-138-generic with 1.
+dpkg: error processing package initramfs-tools (--configure):
+installed initramfs-tools package post-installation script subprocess returned
+error exit status 1
+Errors were encountered while processing:
+initramfs-tools
+E: Sub-process /usr/bin/dpkg returned an error code (1)
+Это нам даёт понять, что Tor версией 0.3.2.10-1 для нашей версии Ubuntu 22.04 не предназначен.
+Поэтому нам нужна более свежая версия Tor.
+Далее мы обновляем список доступных пакетов из репозитория с помщью команды: sudo apt update
+После этого устанавливаем Tor актуальной версии из репозитория вот этой командой: sudo apt install tor
