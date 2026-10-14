@@ -1,10 +1,6 @@
 Данная команда в терминале откроет файл sources в текстовом редакторе: sudo nano /etc/apt/sources.list
-Нахожу вот эти четыре строки:
-deb http://us.archive.ubuntu.com/ubuntu/ jammy universe
-deb-src http://us.archive.ubuntu.com/ubuntu/ jammy universe
-deb http://us.archive.ubuntu.com/ubuntu/ jammy-updates universe
-deb-src http://us.archive.ubuntu.com/ubuntu/ jammy-updates universe
-Перед каждой строкой ставлю символ # , что позволяет все нужные строки закомментировать.
+Нахожу строку: deb http://security.ubuntu.com/ubuntu jammy-security universe
+Перед данной строкой ставлю символ # , что позволяет её закомментировать.
 Нажимаю сочетание клавиш Ctrl+O, а затем Enter, чтобы сохранить изменения.
 Нажимаю сочетание клавиш Ctrl+X, чтобы выйти из текстового редактора
 Следующая команда в терминале позволяет убедиться, что apt больше не использует "jammy-security universe" : sudo apt update
