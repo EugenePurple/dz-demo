@@ -1,0 +1,1 @@
+0 9 * * * /usr/bin/apt update && /usr/bin/apt -y upgrade

@@ -1,0 +1,10 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: GNU Gzip
+Upstream-Contact: http://www.gnu.org/software/gzip/
+Source: https://ftp.gnu.org/gnu/gzip
+
+Files: *
+Copyright: 1999-2016 Free Software Foundation, Inc.
+           1992-1993 Jean-loup Gailly and Mark Adler
+License: GPL-3+
+
