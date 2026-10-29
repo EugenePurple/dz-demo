@@ -1,1 +1,1 @@
-sudo chage -d 0 iren
+sudo passwd -e iren
