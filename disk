@@ -1,0 +1,4 @@
+sudo lvs
+sudo lvremove /dev/vg00/lv01
+sudo vgreduce vg00 /dev/vdb1
+sudo pvremove /dev/vdb1
