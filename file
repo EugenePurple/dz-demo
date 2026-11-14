@@ -1,0 +1,3 @@
+systemctl status ssh
+systemctl show --property=FragmentPath ssh
+systemctl cat ssh
