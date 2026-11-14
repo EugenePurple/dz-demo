@@ -1,1 +1,1 @@
-sudo lsof -c ssh | grep -E 'COMMAD|[[:space:]]REG[[:space:]]'
+sudo lsof -c ssh | grep -E 'COMMAND|[[:space:]]REG[[:space:]]'
