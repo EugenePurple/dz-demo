@@ -1,0 +1,3 @@
+ps aux | grep ssh | grep -v grep
+systemctl status ssh
+cat /var/run/sshd.pid
